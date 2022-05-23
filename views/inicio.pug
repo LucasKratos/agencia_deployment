@@ -1,0 +1,38 @@
+extends ./layout/index
+
+block slider 
+    .slider     
+        h1 Rio de janerio
+        em Aventura
+
+block contenido 
+    main.container.mt-5 
+        h2.text-center.mb-5 Sobre Nosotros 
+        .row.mb-5 
+            .col-md-6 
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Mollitia optio quae eveniet! Perspiciatis voluptas maxime aut,
+                nisi obcaecati officia eaque! Fugiat veniam laudantium
+                totam rerum dolor necessitatibus suscipit. Aliquam!
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Mollitia optio quae eveniet! Perspiciatis voluptas maxime aut,
+                nisi obcaecati officia eaque! Fugiat veniam laudantium
+                totam rerum dolor necessitatibus suscipit. Aliquam!
+            .col-md-6 
+                img(src="/img/inicio_nosotros.jpg", alt="", class="img-fluid")
+
+        include ./layout/bloque_viajes
+    .descuento 
+        .container 
+            .row    
+                .col-md-6
+                    .contenido 
+                        h1 5% de Descuento 
+                        p.titulo Viaje a Canada 
+                        p.fecha 20 de marzo de 2022 - 28 de Marzo de 2022
+                        p.precio $2.500 USD 
+
+    .container 
+        h2.mt-5.text-center Testimoniales
+            include ./layout/bloque_testimoniales
+         
