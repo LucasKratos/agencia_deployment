@@ -8,15 +8,15 @@ const guardarTestimonial = async (req, res)=>{
     const errores= []; 
 
     if(nombre.trim()===''){
-        errores.push({mensaje: 'El nombre esta vacio'});
+        errores.push({mensaje: 'El nombre esta vacío'});
     }
 
     if(correo.trim()===''){
-        errores.push({mensaje: 'El correo esta vacio'});
+        errores.push({mensaje: 'El correo esta vacío'});
     }
 
     if(mensaje.trim()===''){
-        errores.push({mensaje: 'El mensaje esta vacio'});
+        errores.push({mensaje: 'El mensaje esta vacío'});
     }
 
     if(errores.length > 0){
@@ -41,17 +41,31 @@ const guardarTestimonial = async (req, res)=>{
                 nombre,
                 correo,
                 mensaje
+
+                
         });
+        
+            const testimoniales = await Testimonial.findAll();
+            //Mostrar lista de errores
+            res.render('testimoniales', {
+                pagina: 'Testimoniales',
+                errores,
+                nombre,
+                correo,
+                mensaje,
+                testimoniales
+
+        })
 
         } catch (error){
             console.log(error)
         }
 
-    }
+    };
 
 
     console.log(errores)
-}
+};
 export {
     guardarTestimonial
-}
+};
